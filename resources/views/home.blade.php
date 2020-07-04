@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header" style="font-weight: bold; text-align: center; font-size: 1.5rem">Dashboard</div>
+                <div class="card-header" style="font-weight: bold; text-align: center; font-size: 1.5rem">Dashboard teste</div>
 
                 <div class="card-body">
                     @if (session('status'))
