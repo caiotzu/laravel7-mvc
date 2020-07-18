@@ -17,7 +17,8 @@ class AreaObserver
     public function created(Area $area)
     {
         $user = Auth::user();
-        $area->user_id = $user->id;
+        $area->user_id = !empty($user) ? $user->id : null;
+        // $area->user_id = $this->user->id;
         $area->save();
     }
 
@@ -37,7 +38,7 @@ class AreaObserver
     }
     public function updating(Area $area) {
         $user = Auth::user();
-        $area->user_id = $user->id;
+        $area->user_id = !empty($user) ? $user->id : null;
     }
 
     /**
@@ -48,8 +49,8 @@ class AreaObserver
      */
     public function deleted(Area $area)
     {
-        $user = Auth::user();
-        Log::alert("A área {$area->id} foi excluída pelo usuário {$user->id} {$user->email}");
+        // $user = Auth::user();
+        // Log::alert("A área {$area->id} foi excluída pelo usuário {$user->id} {$user->email}");
     }
 
     /**
