@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{ $study->id }}</td>
                     <td>{{ $study->description }}</td>
-                    <td>{{ $study->area->description }}</td>
+                    <td style="color: {{$study->area->color }}">{{ $study->area->description }}</td>
                     <td>{{ $study->date_init }}</td>
                     <td>{{ $study->date_finish }}</td>
                     <td>{{ $study->status }}</td>

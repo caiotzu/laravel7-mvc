@@ -5,6 +5,6 @@
 </div>
 <div class="form-group">
     <label>Cor</label>
-    <input type="text" name="color" class="form-control" placeholder="Entre com uma cor" value="{{ isset($area) ? $area->color : '' }}">
+    <input type="color" name="color" class="form-control" placeholder="Entre com uma cor" value="{{ isset($area) ? $area->color : '' }}">
 </div>
 <button type="submit" class="btn btn-primary">Salvar</button>

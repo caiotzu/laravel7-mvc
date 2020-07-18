@@ -38,6 +38,35 @@
                                 @enderror
                             </div>
                         </div>
+                        <hr>
+
+                        <div class="form-group row">
+                            <label for="zipcode" class="col-md-4 col-form-label text-md-right">CEP</label>
+                            <div class="col-md-6">
+                                <input type="text" name="zipcode" id="zipcode" value="{{ old('zipcode') }}" class="form-control @error('zipcode') is-invalid @enderror" required>
+
+                                @error('zipcode')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="number" class="col-md-4 col-form-label text-md-right">Número</label>
+                            <div class="col-md-6">
+                                <input type="number" min="1" name="number" id="number" value="{{ old('number') }}" class="form-control @error('number') is-invalid @enderror" required>
+
+                                @error('number')
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <hr>
+
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>

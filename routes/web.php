@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 // EXEMPLOS DE DEIXAR APENAS ESSES TIPOS DE ROTAS / OU EXPLUIR ELAS
 /*
@@ -32,7 +32,14 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('areas', 'AreaController')->except('show');
 */
 
+Route::group(['prefix' => '', 'as' => '', 'middleware' => ['auth', 'log']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/areas', 'AreaController')->except('show');
-Route::resource('/studies', 'StudyController')->except('show');
+
+    Route::group(['prefix' => '', 'as' => '', 'middleware' => ['admin']], function () {
+        Route::resource('/areas', 'AreaController')->except('show');
+        Route::resource('/studies', 'StudyController')->except('show');
+    });
+   
+});
 
